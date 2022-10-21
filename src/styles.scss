@@ -1,11 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'node_modules/ag-grid-community/dist/styles/ag-grid.scss';
-@import 'node_modules/ag-grid-community/dist/styles/ag-theme-alpine/sass/ag-theme-alpine.scss';
+@import "node_modules/ag-grid-community/dist/styles/ag-grid.scss";
+@import "node_modules/ag-grid-community/dist/styles/ag-theme-alpine/sass/ag-theme-alpine.scss";
 
-html, body {
-   height: 100%;
-   width: 100%;
-   padding: 5px;
-   box-sizing: border-box;
-   -webkit-overflow-scrolling: touch;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+// Ag-Grid
+.ag-grid-table-box {
+  .ag-layout-auto-height,
+  .ag-layout-print {
+    .ag-center-cols-clipper,
+    .ag-center-cols-container {
+      min-height: unset !important;
+    }
+  }
+
+  .ag-theme-alpine {
+    .ag-header-group-cell {
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+      border-top: 1px solid #000;
+    }
+    .ag-header-group-cell:nth-child(1) {
+      border-left: 1px solid #000;
+    }
+    .ag-header-cell {
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+      border-top: 1px solid #000;
+    }
+    .ag-header-cell:nth-child(1) {
+      border-left: 1px solid #000;
+    }
+    .ag-ltr {
+      .ag-cell {
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+      }
+      .ag-cell:nth-child(1) {
+        border-left: 1px solid #000;
+      }
+    }
+  }
 }

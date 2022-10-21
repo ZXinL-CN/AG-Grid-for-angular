@@ -1,14 +1,22 @@
 <!-- Button to clear selection -->
-<button (click)="clearSelection()">Clear Selection</button>
+<button (click)="onShowData()">Show Data</button>
 <!-- AG Grid Angular Component -->
-<ag-grid-angular
-  style="width: 100%; height: 100%"
-  class="ag-theme-alpine"
-  [columnDefs]="columnDefs"
-  [defaultColDef]="defaultColDef"
-  [rowData]="rowData$ | async"
-  [rowSelection]="'multiple'"
-  [animateRows]="true"
-  (gridReady)="onGridReady($event)"
-  (cellClicked)="onCellClicked($event)"
-></ag-grid-angular>
+<div class="ag-grid-table-box">
+  <ag-grid-angular
+    style="width: 702px"
+    class="ag-theme-alpine"
+    domLayout="autoHeight"
+    [defaultColDef]="defaultColDef"
+    [columnDefs]="options.columnDefs"
+    [rowData]="options.rowData"
+  ></ag-grid-angular>
+  <p><br /></p>
+  <ag-grid-angular
+    style="width: 702px"
+    class="ag-theme-alpine"
+    domLayout="autoHeight"
+    [defaultColDef]="defaultColDef"
+    [columnDefs]="options2.columnDefs"
+    [rowData]="options2.rowData"
+  ></ag-grid-angular>
+</div>
