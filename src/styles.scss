@@ -11,6 +11,24 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+.ag-theme-alpine {
+  .ag-header-cell {
+    &:hover {
+      .ag-header-cell-resize::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        display: block;
+        left: calc(50% - 1px);
+        width: 2px;
+        height: 80%;
+        top: calc(50% - 40%);
+        background-color: red;
+      }
+    }
+  }
+}
+
 // Ag-Grid
 .ag-grid-table-box {
   .ag-layout-auto-height,

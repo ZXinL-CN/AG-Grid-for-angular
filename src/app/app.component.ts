@@ -84,7 +84,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   private initSchema(columnDefs: ColDef[]) {
     const schema = {};
     columnDefs.map((columnDef) => {
-      schema[columnDef['field']] = '';
+      schema[columnDef['field']] = '2134';
     });
     return schema;
   }

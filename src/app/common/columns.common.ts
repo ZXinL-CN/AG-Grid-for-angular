@@ -1,17 +1,29 @@
 import { Injectable } from '@angular/core';
 import { ColDef, ColGroupDef } from 'ag-grid-community';
+import { cellRendererComponent } from '../grid/cellRender.component';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AgGridTableColumns {
-  constructor() {}
+  constructor() { }
 
-  public getDefaultColDef() {
+  public getDefaultColDef(): ColDef {
     return {
-      width: 100,
+      minWidth: 100,
       editable: true,
       suppressMovable: true,
+      suppressSizeToFit: false,
+      resizable: true,
+      // cellRenderer: (info: any) => {
+      //   console.log(info);
+      //   if (info.colDef.headerTooltip) {
+      //     console.log(info.colDef.headerTooltip);
+      //     return;
+      //   }
+      //   return (`<span title="${info.value}">${info.value}</span>`)
+      // },
+      cellRendererFramework: cellRendererComponent
     };
   }
 
@@ -24,10 +36,12 @@ export class AgGridTableColumns {
       {
         headerName: '序号',
         field: 'serialNo',
+        cellRenderer: (info: any) => (`<span title="🚀${info.value}">🚀${info.value}</span>`),
       },
       {
         headerName: '编研成果',
         field: 'researchResults',
+        // cellRendererFramework: cellRendererComponent,
       },
       {
         headerName: '作者',
