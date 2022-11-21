@@ -23,7 +23,16 @@ export class AgGridTableColumns {
       //   }
       //   return (`<span title="${info.value}">${info.value}</span>`)
       // },
-      cellRendererFramework: cellRendererComponent
+      cellRendererFramework: cellRendererComponent,
+      valueParser: params => Number(params.newValue) || '',
+    //   valueSetter: params => {
+    //     console.log(params);
+    //     params.data[params.colDef.field] = params.newValue;
+    //     if(!Number(params.newValue)) {
+    //       console.log('只能输入数字');
+    //     }
+    //     return false;
+    // }
     };
   }
 
